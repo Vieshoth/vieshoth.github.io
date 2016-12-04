@@ -4,9 +4,12 @@ title : About
 permalink: /about/
 ---
 
-<h2>Gravity</h2>
-<p>Minimal, text based, liberal Jekyll theme<br>for sharing your awesome ideas.</p>
+<h2>Vieshoth Journal</h2>
+<p>I write about embedded, linux and web technologies<br>Topics in which I have experience.</p>
 <br>
+
+<h4>e-mail</h4>
+<p>vieshothhce@gmail.com<p>
 <center><p ><strong><span class="manual">Get up and running with</span> Gravity</strong></p></center>
 <br>
 <div class="manual-post">
