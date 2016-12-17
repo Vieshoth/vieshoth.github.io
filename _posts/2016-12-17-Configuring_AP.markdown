@@ -93,6 +93,7 @@ ifconfig wlan0 <IP ADDRESS> up
 
 #### STEP 4: Now you can connect any station with this AP using the SSID.
 Since our ssid is "NEW_AP" scan this ssid with the following command from the station side.
+
 ```
 sudo iw dev wlan0 scan
 ```
@@ -100,7 +101,7 @@ This will list all the available AP with required information.
 
 #### STEP 5: Once the station is connected to AP, assign an IP address.
 
-####STEP 6: Ping and confirm the connection.
+#### STEP 6: Ping and confirm the connection.
 ```
 ping <IP ADDRESS OF THE AP>
 ```
