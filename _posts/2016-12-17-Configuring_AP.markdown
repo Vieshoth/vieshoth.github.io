@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Setting up a device as Access Point (AP)"
+date:   2016-11-23 19:45:31 +0530
+categories: linux
+author: "Vieshoth"
+---
+
 #### To configure imx6 som as wifi hotspot we need to create two file.
 /etc/hostapd.conf - The configuration file
 /usr/sbin/hostapd
