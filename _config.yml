@@ -6,13 +6,15 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Vieshoth Journal
-email: vieshothhce@gmail.com
-description: for the so called developer
+title: Gravity
+email: hemangsk@gmail.com
+description: The Liberal Jekyll Theme
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://vieshoth.in" # the base hostname & protocol for your site
-twitter_username: 
-github_username:  vieshoth
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: hemang_kumar
+github_username:  hemangsk
+paginate: 5
 
+gems: [jekyll-paginate, kramdown]
 # Build settings
 markdown: kramdown
