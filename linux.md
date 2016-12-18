@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: Science
-permalink: /science/
+title: Linux
+permalink: /linux/
 tagline: "Humanity is overrated."
-category: "science"
+category: "linux"
 ---
