@@ -25,14 +25,14 @@ It has its device nod as “/dev/mmcblk0”
 
 Give this node as an input argument to fdisk command and press enter
 you will get an output similar to the output in the below shown image.Screenshot from 2016-08-03 11:01:01
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part2.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskmmcblk.png)
 
 inside the fdisk command prompt press m and enter. It will give you the available options.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part3.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskm.png)
 
 To get the device details and the partition table type p and enter.
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part4.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/partitiontype.png)
 
 You will get an output similar to this.
 This output shows that the eMMC device I am partitioning has how many bytes and sectors. Since this emmc device is not partitioned yet it doesn’t show any partitions.
@@ -71,10 +71,10 @@ Ex: (100*1024*1024/512) + 2048 = 206848
 now give the last sector value as 206848 and press enter.
 
 Screenshot from 2016-08-05 11:15:33
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part5.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n.png)
 
 Now we have created our first partition. To check it press p.Screenshot from 2016-08-05 11:16:04
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part6.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p.png)
 
 But wait…. have we formatted the partition to fat file system?
 No right still it shows the file type as linux. For the time being we will leave it as such.
@@ -88,32 +88,32 @@ Now lets calculate the last sector.
 last sector = (3*1024*1024*1024/512) + 208896
 = 6500352
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part7.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n2.png)
 
 now go and check whether it is showing the first partition size as 3GB by pressing p.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part8.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p2.png)
 
 So we have created two partiotions. Did you notice the type of this partition? It shows the type is Linux. But we want that first partition as Fat32. In linux systems when you create a partition the default partition type is  ext3 (which is shown as Linux).
 
 Now lets change the partition type to FAT32. But how do we do it?. Type m and search the for the command to change the partition type. Command ‘t’ is used to change the partition type. So type and press enter. It will ask for which partition we should change the type. press 1 for that. And then press “L” and check what are the available partition type.
 
 For FAT32 the hexcode is “c”.
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part9.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/hexcode.png)
 
 Now check out the partition type by pressing “p”
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part10.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p3.png)
 
 Lets create the third and final partition and chenge the partition type to FAT32.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part11.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n3.png)
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part12.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/t.png)
 
 now press “p” and check the created partitions.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part13.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p4.png)
 
 Once the partitions are created format it with appropriate commands.
 
@@ -125,13 +125,13 @@ For ext3
 
 The syntax is: sudo mkfs.ext3 <partition_device> -L <name>
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part14.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/boot.png)
 
 Ok now you know how to partition a eMMC or sdcard.
 
 There is another way of doing this with just one command. That command is sfdisk. Open a partition.sh file using any editer and add the following lines.
-```{r, engine='sh', count_lines}
 
+```
 echo “#############partitioning…#################”
 node=/dev/mmcblk0
 
