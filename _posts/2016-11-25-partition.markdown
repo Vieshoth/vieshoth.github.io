@@ -17,7 +17,7 @@ In linux there is a handy command called fdisk.
 fdisk and sfdisk(does the same work as fdisk but in a different manner)
 
 “fdisk -h” command gives you an idea about what it does and how it should be used.
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part1.png)
+![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdisk_command.png)
 
 First we will select the device which we going to partition.
 The device which I am going to partition here is emmc.
