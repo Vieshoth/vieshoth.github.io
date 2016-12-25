@@ -16,11 +16,12 @@ nmcli c
 nmcli d wifi list
 ```
 or:
+
 ```
 sudo iwlist wlan0 scanning
 ```
 
-#### To see list of interfaces (<WifiInterface>)
+#### To see list of interfaces 
 ```
 ifconfig -a
 ```
