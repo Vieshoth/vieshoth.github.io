@@ -14,8 +14,8 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       #ffffff;
+$background-color: #222222;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: #aaa !important;
+    color: #fff !important;
     text-decoration: none;
 
     &:visited {
@@ -165,7 +165,7 @@ a {
       }
     }
     &.postLink{
-      color: black !important;
+      color: white !important;
       &:hover {
 
           border-bottom: 1px dotted black ;
@@ -214,9 +214,9 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid #555;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #000;
 }
 
 code {
@@ -660,7 +660,7 @@ pre {
     @extend %vertical-rhythm;
 
     .highlighter-rouge & {
-      background: #eef;
+      background: #000;
     }
 
     .c     { color: #998; font-style: italic } // Comment
