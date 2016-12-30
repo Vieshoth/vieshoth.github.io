@@ -16,7 +16,7 @@ mail id : vieshothhce@gmail.com
 </p>
 
 <p>I also write answers in Quora<br/>
-Click the below link to checkout my profile in Quora<br/>
+Click the below link to checkout my profile in Quora
 
 [Vieshoth Navartnam on Quora](https://www.quora.com/profile/Vieshoth-Navaratnam)
 </p>
