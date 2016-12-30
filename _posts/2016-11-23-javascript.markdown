@@ -2,14 +2,10 @@
 layout: post
 title:  "Javascript basic syntax"
 date:   2016-11-23 19:45:31 +0530
-categories: linux
+categories: web
 author: "Vieshoth"
 ---
 
----
-layout: post
-title: Javascript basic syntax
----
 
 This blog is not for biginners. This site is for those who have experience or knowledge in other language and want quicky learn javascript.
 
@@ -30,6 +26,7 @@ function <function_name>(<function_arguments>){
 <function_body>
 }
 ```
+
 ```javascript
 var <function_name> = function (<function_arguments>){
 <function_body>
@@ -59,6 +56,7 @@ var apple_fruit = new fruit("apple");
 But keep in mind functions use 'this' operator can be only used as constructor.
 
 For example
+
 ```javascript
 function fruit (name){
 this.name = name;
@@ -81,12 +79,14 @@ var <object_name> = {
 }
 ```
 OR
+
 ```javascript
 var <object_name> = new <constructor_name>(<arguments>);
 ```
 For more clarification
 
 variable
+
 ```javascript
 var <variable_name> = <variable_value>
 
