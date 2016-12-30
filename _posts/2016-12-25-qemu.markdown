@@ -11,18 +11,20 @@ author: "Vieshoth"
 In this blog Ill be writing on how we can boot kernel in qemu virtual emulator.
 
 To do this we need three packages in our system.
-1. qemu package
-2. kernel source package
-3. busybox source package
+1. qemu package.
+2. kernel source package.
+3. busybox source package.
 
 ### Installing qemu
 To insall qemu package in your ubuntu system enter this command.
+
 ```
 sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
 ```
 I assume you have a basic knowlegde in linux and busybox.
 
 Download the linux source code from the following page.
+
 ```
 https://www.kernel.org/pub/linux/kernel/v4.x/
 ```
@@ -30,6 +32,7 @@ https://www.kernel.org/pub/linux/kernel/v4.x/
 I have downloaded linux-4.1.36.tar.xz
 
 Download the busybox source code from the following page.
+
 ```
 http://busybox.net/downloads/busybox-1.23.2.tar.bz2
 ```
@@ -37,11 +40,14 @@ http://busybox.net/downloads/busybox-1.23.2.tar.bz2
 ### Building linux kernel
 
 Go inside the kernel source code and configure the kernel
+
 ```
 make x86_64_defconfig
 make kvmconfig
 ```
+
 Build the kernel
+
 ```
 make
 ```
@@ -49,15 +55,19 @@ make
 ### Building busybox
 
 To configure busybox
+
 ```
 make defconfig
 ```
+
 enable static linking in busybox from menuconfig
+
 ```
 make menuconfig
 ```
 
 type /, search for “static”. You’ll see that the option is located at:
+
 ```
 -> Busybox Settings
   -> Build Options
@@ -66,6 +76,7 @@ type /, search for “static”. You’ll see that the option is located at:
 select it save and exit.
 
 build busybox
+
 ```
 make
 make Install
@@ -84,10 +95,12 @@ cp -av <PATH TO BUSYBOX SOURCE CODE>/_install/* .
 ```
 
 Now create a init file
+
 ```
 vim init
 ```
 and the below script
+
 ```
 #!/bin/sh
 
@@ -99,15 +112,18 @@ echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
 exec /bin/sh
 ```
 and make it executable
+
 ```
 chmod +x init
 ```
 
 cpio the initramfs
+
 ```
  find . -print0 cpio --null -ov --format=newc gzip -9 > initramfs-busybox-x86.cpio.gz
  ```
 ### Boot the kernel
+
 ```
 qemu-system-x86_64 \
 -kernel <PATH_TO_THE_KERNEL_SOURCE_CODE>/arch/x86_64/boot/bzImage \
