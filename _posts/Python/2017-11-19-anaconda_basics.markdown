@@ -1,4 +1,11 @@
-ANACONDA
+---
+layout: post
+title:  "ANACONDA BASICS"
+date:   2017-11-19 19:45:31 +0530
+categories: Python
+---
+
+## INTRODUCTION
 
 Anaconda is a Python data science platform. It is also a package manager.
 Hence one can create customised python environment with anaconda.
@@ -8,6 +15,8 @@ https://www.anaconda.com/download/#linux
 
 The procedure to install anaconda in ubuntu is given in this link
 https://docs.anaconda.com/anaconda/install/linux
+
+## CONDA
 
 'conda' is the command-line utility for anaconda.
 
@@ -46,10 +55,14 @@ conda search "^python$"
 
 conda --help
 
+## CREATING AN ENVIRONMENT
+
 conda create -n my_env python=3
 
 source activate my_env
 
+
+## DELETING AN ENVIRONMENT
 
 source deactivate
 
