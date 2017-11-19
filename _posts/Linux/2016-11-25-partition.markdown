@@ -30,6 +30,7 @@ Inside the fdisk command prompt press m and enter. It will give the available op
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskm.png)
 
 To get the device details and the partition table type p and enter.
+
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/partitiontype.png)
 
 You will get an output similar to this.
@@ -64,10 +65,9 @@ so lets start partitioning the eMMC
 Ex: (100*1024*1024/512) + 2048 = 206848
 now give the last sector value as 206848 and press enter.
 
-Screenshot from 2016-08-05 11:15:33
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n.png)
 
-Now we have created our first partition. To check it press p.Screenshot from 2016-08-05 11:16:04
+Now we have created our first partition. To check it press p.
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p.png)
 
 
@@ -94,6 +94,7 @@ So we have created two partiotions. Did you notice the type of this partition? I
 Now lets change the first partition type to FAT32. But how do we do it?. Type m and search the for the command to change the partition type. Command ‘t’ is used to change the partition type. So type and press enter. It will ask for which partition we should change the type. press 1 for that. And then press “L” and check what are the available partition type.
 
 For FAT32 the hexcode is “c”.
+
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/hexcode.png)
 
 Now check out the partition type by pressing “p”
