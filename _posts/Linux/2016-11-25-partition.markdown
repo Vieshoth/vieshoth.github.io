@@ -152,16 +152,28 @@ save it, change the mode of the file and execute.
 
 This script will create partition, change the type of the partition and format it onbehalf of us.
 
-Let us analyse how does it do.
+Let us analyse this line by line.
 
-The second line creates a variable and assigns the device which must be partitioned.
+```
+dd if=/dev/zero of=${node} bs=1024 count=1
+```
+This line deletes the existing partition table if any.
 
-The third line deletes the already availabe partition  table .
+```
+sfdisk –force -uM ${node} << EOF
+```
+This line will start partitioning. 
+```
+3,103,0c
+```
+This line will create the first partition.
+The first argument '3' represents the starting byte of  the partition interms of MB
+The second argument '103' represents the size of the partition
+And the third argument "0c" represents the partition type
 
-The fifth line is where we actually going to partition. In the sixth line we create our first partition.
 
-3 – starting byte of  the partition interms of MB
 
-103 – size of the partition
+Hope this article helps in understaing the concept of partitioning the memory in linux based OS.
 
-0c – partition type
+Please type you feedback and comments in the comments section.
+
