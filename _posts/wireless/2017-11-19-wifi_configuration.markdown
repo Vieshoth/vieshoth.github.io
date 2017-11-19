@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "BASIC WIFI COMMANDS"
-date:   2016-11-23 19:45:31 +0530
+title:  "WIFI CONFIGURATION"
+date:   2017-11-19 19:45:31 +0530
 categories: wireless
 ---
 
