@@ -19,6 +19,8 @@ https://docs.anaconda.com/anaconda/install/linux
 ## CONDA
 
 'conda' is the command-line utility for anaconda.
+Use *conda --help* or *man conda* command to know more about this command.
+Here we will see some important commands to invoke our customized Python environment.
 
 'conda list' This command will list out all the available package in anaconda.
 ```
@@ -48,27 +50,84 @@ aaa@linux$
 
 ```
 
+Use *conda search * to search any kind of package it supports. For example to know more about "numpy" package, 
+the command below can be used.
 
-
-
-conda search "^python$"
-
-conda --help
+```
+conda search "numpy"
+```
 
 ## CREATING AN ENVIRONMENT
 
-conda create -n my_env python=3
+One can create or invoke a Python environment using the command below. 
+You can select the Python version as per your requirement.
+```
+aaa@linux$ conda create -n my_env1 python=3
+Fetching package metadata ...........
+Solving package specifications: .
 
+Package plan for installation in environment /home/vieshoth/anaconda3/envs/my_env1:
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2017.08.26-h1d4fec5_0     
+    certifi:         2017.7.27.1-py36h8b7b77e_0
+    libedit:         3.1-heed3624_0            
+    libffi:          3.2.1-hd88cf55_4          
+    libgcc-ng:       7.2.0-h7cc24e2_2          
+    libstdcxx-ng:    7.2.0-h7a57d05_2          
+    ncurses:         6.0-h9df7e31_2            
+    openssl:         1.0.2m-h26d622b_1         
+    pip:             9.0.1-py36h6c6f9ce_4      
+    python:          3.6.3-h1284df2_4          
+    readline:        7.0-ha6073c6_4            
+    setuptools:      36.5.0-py36he42e2e1_0     
+    sqlite:          3.20.1-hb898158_2         
+    tk:              8.6.7-hc745277_3          
+    wheel:           0.29.0-py36he7f4e38_1     
+    xz:              5.2.3-h55aa19d_2          
+    zlib:            1.2.11-ha838bed_2         
+
+Proceed ([y]/n)? y
+
+#
+# To activate this environment, use:
+# > source activate my_env1
+#
+# To deactivate an active environment, use:
+# > source deactivate
+#
+
+aaa@linux$ 
+```
+The above listed packages are installed by defailt while creating a new environment.
+To include any new package which is not listed above, use this command.
+
+```
+conda create -n myenv python=3 scipy
+
+```
+To install a package in an alreadu created env, use this command.
+
+```
+conda install -n myenv scipy
+```
+
+
+```
 source activate my_env
-
+```
 
 ## DELETING AN ENVIRONMENT
-
+```
 source deactivate
-
+```
+```
 conda info --envs
-
+```
+```
 conda list -n myenv
-
-
+```
+```
 conda remove --name myenv --all
+```
