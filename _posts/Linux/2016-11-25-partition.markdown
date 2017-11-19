@@ -5,7 +5,7 @@ categories: Linux
 title: PARTITIONING MEMORY
 ---
 
-### Introduction
+## Introduction
 
 Partitioning is a process of dividing the memory logically. All the non volatile memories can be partitioned.
 
@@ -16,7 +16,7 @@ fdisk and sfdisk(does the same work as fdisk but in a different manner)
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdisk_command.png)
 
 
-### Knowing about sectors and bytes
+## Knowing about sectors and bytes
 
 
 Here for this example, let us take emmc as our device to partiton.
@@ -45,7 +45,7 @@ So if you divide the total bytes with 512 you will get number of sectors.
 Partition is done in terms of sectors.
 
 
-### Creating partition
+## Creating partition
 
 
 We are going to create three partitions in this emmc.
@@ -68,6 +68,7 @@ now give the last sector value as 206848 and press enter.
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n.png)
 
 Now we have created our first partition. To check it press p.
+
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p.png)
 
 
@@ -89,11 +90,14 @@ now go and check whether it is showing the first partition size as 3GB by pressi
 So we have created two partiotions. Did you notice the type of this partition? It shows the type is Linux. But we want that first partition as Fat32. In linux systems when you create a partition the default partition type is ext3 (which is shown as Linux).
 
 
-### Formating partition
+## Chnaging the type of the partition
 
-Now lets change the first partition type to FAT32. But how do we do it?. Type m and search the for the command to change the partition type. Command ‘t’ is used to change the partition type. So type and press enter. It will ask for which partition we should change the type. press 1 for that. And then press “L” and check what are the available partition type.
-
-For FAT32 the hexcode is “c”.
+Now lets change the first partition type to FAT32. But how do we do it?. 
+* Type m and search for the command to change the partition type. 
+* Command ‘t’ is used to change the partition type. So type 't' and press enter. 
+* Next it will ask for which partition to be selected for this operation. Give the partition numeber an input. 
+In this case it is '1'. 
+* Now to check the available partiton type press “L”. You will find out for FAT32 format, the hexcode is “c”.
 
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/hexcode.png)
 
@@ -113,6 +117,9 @@ now press “p” and check the created partitions.
 
 Once the partitions are created format it with appropriate commands.
 
+
+## Formating partition
+
 To format FAT32 partition we have command called mkfs.vfat.
 
 The syntax is: sudo mkfs.vfat <partition_device> -n <name>
@@ -124,6 +131,8 @@ The syntax is: sudo mkfs.ext3 <partition_device> -L <name>
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/boot.png)
 
 Ok now you know how to partition a eMMC or sdcard.
+
+## SFDISK Command 
 
 There is another way of doing this with just one command. That command is sfdisk. Open a partition.sh file using any editer and add the following lines.
 
@@ -139,13 +148,17 @@ sfdisk –force -uM ${node} << EOF
 2767,,0c
 EOF
 ```
-save it change the mode of the file and execute. It will does all the work for us. Ok now lets explore how does it work?
+save it, change the mode of the file and execute. 
+
+This script will create partition, change the type of the partition and format it onbehalf of us.
+
+Let us analyse how does it do.
 
 The second line creates a variable and assigns the device which must be partitioned.
 
 The third line deletes the already availabe partition  table .
 
-The fifth line is where we actually going to partition. In the sixth line we create the first partition.
+The fifth line is where we actually going to partition. In the sixth line we create our first partition.
 
 3 – starting byte of  the partition interms of MB
 
