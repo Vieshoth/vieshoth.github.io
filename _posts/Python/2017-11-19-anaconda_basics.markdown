@@ -8,7 +8,7 @@ categories: Python
 ## INTRODUCTION
 
 Anaconda is a Python data science platform. It is also a package manager.
-Hence one can create customised python environment with anaconda.
+Hence one can create customized python environment with anaconda.
 
 To download Anaconda for any OS visit this link
 https://www.anaconda.com/download/#linux
@@ -19,10 +19,10 @@ https://docs.anaconda.com/anaconda/install/linux
 ## CONDA
 
 'conda' is the command-line utility for anaconda.
-Use *conda --help* or *man conda* command to know more about this command.
+Use *conda --help* or *man conda* command gives you more insight about the "conda" command.
 Here we will see some important commands to invoke our customized Python environment.
 
-'conda list' This command will list out all the available package in anaconda.
+*conda list* is the command which will list out all the available package in anaconda.
 ```
 aaa@linux$ conda list
 # packages in environment at /home/aaa/anaconda3:
@@ -100,34 +100,60 @@ Proceed ([y]/n)? y
 
 aaa@linux$ 
 ```
-The above listed packages are installed by defailt while creating a new environment.
-To include any new package which is not listed above, use this command.
+The above listed packages are installed by default while creating a new environment.
+To include any new package which is not in the list, use this command.
 
 ```
 conda create -n myenv python=3 scipy
 
 ```
-To install a package in an alreadu created env, use this command.
+To install a package in an already created env, use this command.
 
 ```
 conda install -n myenv scipy
 ```
+Creating the environment alone will not make you to enter in to Python environment. For that you need to activate it. 
+Use this command *source activate my_env1* to avtivate. And the output of this will be like shown below.
+```
+aaa@linux$ source activate my_env1
+(my_env1) aaa@linux$ 
+```
+So this will lead to the Python environment you created.
 
+## KNOW YOUR ENVIRONMENT
 
-```
-source activate my_env
-```
-
-## DELETING AN ENVIRONMENT
-```
-source deactivate
-```
+To get the environment list in the PC.
 ```
 conda info --envs
 ```
+To know about a particular environment.
 ```
 conda list -n myenv
 ```
+
+## REMOVING AND DELETING
+To come out of the environment
+```
+source deactivate
+```
+To delete an environment
 ```
 conda remove --name myenv --all
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
