@@ -1,0 +1,246 @@
+---
+layout: post
+title:  "ALL YOU WANT TO KNOW ABOUT GIT"
+date:   2017-12-1 18:00:31 +0530
+categories: Linux
+---
+
+## Introduction
+
+Git is a version control system developed by Linus Tovarlds. It is not only the best but the most 
+used version control system in today's world.
+It does the following three jobs:
+		* Source code management
+		* Keep track of changes 
+		* Version control system
+
+
+Most of the other version control systems available in the market are based on **Central code repository model**.
+But git is based on **distributed version control system**
+
+The main advantages of distributed version control system are
+	* it allows different users or teams of users can maintain their own repositories instead of working from a 
+	central repository.
+	* And in git the changes are stored as change sets or patches, and we're focused on tracking changes 
+		not the versions of the document. These change sets can be exchanged between repositories.
+
+	
+## Installation
+
+The following link gives you an installation guide for various linux flavours
+[Installing git on linux](https://git-scm.com/download/linux)
+	
+For ubuntu these two commands are sufficient
+```
+sudo apt-get update
+sudo apt-get install git
+```
+
+To confirm that git is installed successfully enter the below commands and check the output. If it shows a similar path 
+as output then it installed. Also check the version of the git for your reference.
+```
+$ which git 
+/usr/bin/git
+```
+and 
+```
+$ git version	
+git version 2.7.4
+```
+Dont be concerned if my version is different than yours	
+
+## Configuration
+
+After installing git we need to configure the git. That means feeding it with required informations.
+We can make this configuration either global or local to the repository.
+
+### Global Configuration
+```
+git config --global user.name "<youname>"
+git config --global user.email "<mailid>"
+```	
+Fill the username and mailid with your appropriate input.
+
+Now go and check the ".gitconfig" file in your home directory. 
+These name and email details should be updated in that file.
+
+Once it is set this configuration is applicable for all the git repo in your PC untill you change.
+You can also use the below commands to view the configuration:
+```
+git config --list
+git config user.name
+```
+
+### local Configuration
+	
+You can also add configurion which is local to that repo unlike global.
+For example:
+```
+git config --local local.name "<youname>"
+git config --local local.email "<mailid>"
+```	
+These configuration will not effect the ".gitconfigure" file under home directory. However it will update the config
+file inside .git directory under the directory in which you applied these commands.
+
+
+Since you are new to git I would prefer you to use the global configuration method.
+	
+Git also has system level configuration. But it is not covered in the tutorial.	
+	
+	
+	
+	
+
+git config user.name
+
+To tell git what text editor you will be using
+git config --global core.editor "<editor name>"
+git config --global color.ui true
+
+Git help
+
+git help
+git help <command>
+	ex: git help fetch
+
+man git-<command>
+	ex: man git-fetch
+
+## Initialization
+
+Git init
+
+git init
+creates .git
+This directory is where git stores all of his tracking information.
+To remove git from this directory you can simply remove .git directory.
+
+after making changes 
+	add it
+	commit it
+	
+
+commit messages
+	short single line messages with 50 characters
+	Discription followed by a blank each line to 72 char
+	Write message in present tense not past tense. (what this label does not what we did)
+		Ex: This fixes a bug
+			not fixed a bug
+	Can also add support request ticket.
+
+## Concepts and architecture
+
+
+
+
+
+
+
+
+
+
+
+
+	
+git log
+
+	iformation 
+	each commit as an unique id
+	number of options can be used with log 
+	git log -n 2
+	git log --since=<yy-m-d>
+	since that date popup
+	up untill the 15th of june
+	git log --untill=<yy-m-d>
+	
+	git log --author="Kevin"
+	
+	global search
+	git log --grep="string name"
+
+
+
+Git concepts and architecture
+
+three tree arch
+
+two tree arch
+	repo
+	staging index
+	working copy
+	
+	few files from many modified files.
+	
+Changeset(commit)->checksum
+	This checlsum algorithm changes data into sample number
+	same data equals to same checksum (40 character hexadecimal string). This is commit id which displays in commit section.
+	
+	SHA-1 hash algorithm
+	
+Head pointer
+
+cat .git/HEAD
+	ref: refs/heads/new
+
+cat .git/refs/heads/new
+	262e92f6334dbedcc2b0179fa1f0ed3e5a03fd76
+	
+ls .git/logs/refs/heads/
+	master  new
+	
+	
+git log HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
