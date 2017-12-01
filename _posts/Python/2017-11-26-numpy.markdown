@@ -1,7 +1,11 @@
+---
+layout: post
+title:  "GETTING STARTED WITH NUMPY"
+date:   2017-11-19 19:45:31 +0530
+categories: Python
+---
+
 In this blog I am going to show how to create and access numpy arrays. 
-
-## Introduction to numpy.
-
 Numpy is Python library package for scientific computations. Basic data structure of numpy is an array.
 
 ## Creating numpy arrays 
@@ -51,7 +55,7 @@ array is method of numpy library which creats an array from Python list.
 
 numpy array can be created with out a python list using a numpy arange method.
 For numpy arange syntax visit this link
-https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html 
+[For more info...](https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html)
 
 To create numpy array which count from 0 to 10
 ```  
@@ -84,7 +88,7 @@ array([ 0,  5, 10, 15, 20, 25, 30, 35, 40, 45])
 ### Instantiating arrays with one or more integers.
 
 linspace function creates an array evenly or linearly spaced. For more visit:
-https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html
+[For more info...](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html)
 
 This linspace function takes both the start value and end value to the list.
 In linspace the third argument is 'num'. Using this we can specify the samples to be generated between the start value 
@@ -196,52 +200,49 @@ array([25, 40, 20, 45, 30])
 ```
 
 
-## Referencing elements within array
+## Accessing elements in array
 
-Lets create simple array
+### Indexing
+
+Accesing the element in array is very simple. It can be done using square brackets.
+For instance in the below example I have created an array of '0' to '10'. Now to print the 4th element of that array,
+specify the index number within the square bracket.
 ```
-simple_array = np.array([4,8,6,3,5])
-```
-now if I want to print the 4rd element alone 
-the instruction statement is 
-```
-simple_array[5]
+>>> long_array = np.arange(10)
+>>> print(long_array)
+[0 1 2 3 4 5 6 7 8 9]
+>>> print(long_array[4])
+4
 ```
 
-## Creating subarray within another array
+### Slicing
+
+If we want to construct a another array from an array slicing technique can be used.
+Lets try to understand this with the below example. In this example we first created an array of number from '0' to '10'. 
+And then created another array called 'c_array' by copying the elements in the index 4 to 7 from the 'long_array' 
+with slicing technique. The start index and stop index is seperated by ':'. But the stop index is excluded here.
 
 ```
-main_array = np.array([4,88,6,3,5, 66, 34, 62, 5])
-```
-Creating mask array
-```
-greater_than_fifty = 50 < main_array
-```
-```
-greater_than_fifty
-```
-```
-array([False,  True, False, False, False,  True, False,  True, False], dtype=bool)
-```
-```
-sub_array = main_array[greater_than_fifty]
-```
-```
-sub_array
-```
-```
-array([88, 66, 62])
-```
-You can do the same thing with 
-s_array = main_array[50<main_array]
-s_array
-array([88, 66, 62])
+>>> long_array = np.arange(10)
+>>> print(long_array)
+[0 1 2 3 4 5 6 7 8 9]
+>>>
+>>> c_array = long_array[4:7]
+>>> print(c_array)
+[4 5 6]
+>>> 
+>>>
+>>> print(long_array[4])
+4
+>>> c_array = long_array[4:]
+>>> print(c_array)
+[4 5 6 7 8 9]
+>>>
 
-## Array attributes
+```
 
-main_array.size
-
-main_array.dtype
+Here we have completed the basics of Numpy. I hope this gives you some insight about the numpy. I will update the continuation 
+of this tutorial in another blog soon.
 
 
 
@@ -249,4 +250,10 @@ main_array.dtype
 
 
 
- 
+
+
+
+
+
+
+
