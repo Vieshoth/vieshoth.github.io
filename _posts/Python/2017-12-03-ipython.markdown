@@ -1,0 +1,123 @@
+---
+layout: post
+title:  "WORKING WITH IPYTHON"
+date:   2017-12-3 18:00:31 +0530
+categories: Python
+---
+
+IPython is interactive command shell for python developed by Fernando Perez in 2001.
+http://ipython.org/install.html
+
+## Installing IPython 
+
+## Launching IPython 
+
+
+## Auto completion
+
+Pressing the tab button after typing initial letters of one variable or module, 
+the IPython shell will display the variables whith starts with those typed letters.
+
+For example:
+```
+In [8]: 
+
+In [8]: my_first_list = [5,67,23,8,9,0]
+
+In [9]: my_second_list = [98,5,64,84,77]
+
+In [10]: my_          
+             my_first_list                                                                                                         
+             my_second_list    
+			 
+In [11]: my_first_list.
+                        append()  count()   insert()  reverse() 
+                        clear()   extend()  pop()     sort()    
+                        copy()    index()   remove()            
+			 
+
+```
+
+In the above example after giving the first two letters of the varaible, 
+it shows the all the varaible which starts with that letters. It can even list out the method and attributes of the 
+object given.
+
+This feature is applicable for searching files and file paths too.
+
+## Object Introspection
+
+Simply typing question mark symbol '?' after or before the object will 
+list out all the informations of that object.
+
+```
+In [10]: my_first_list?
+Type:        list
+String form: [5, 67, 23, 8, 9, 0]
+Length:      6
+Docstring:  
+list() -> new empty list
+list(iterable) -> new list initialized from iterable's items
+
+In [11]: ?my_second_list
+Type:        list
+String form: [98, 5, 64, 84, 77]
+Length:      5
+Docstring:  
+list() -> new empty list
+list(iterable) -> new list initialized from iterable's items
+
+In [12]:
+```
+
+The "??" can be used to view the source code of the object if possible. 
+For example I have created a function and to get the source code I have used the '?' symbol used.
+Similarly to get the source code '??' symbol can be used.
+
+```
+In [14]: def printhi():
+    ...:     print("HI")
+    ...:     
+
+In [15]: printhi()
+HI
+
+In [16]: printhi?
+Signature: printhi()
+Docstring: <no docstring>
+File:      ~/Work/python/data_science/numpy/<ipython-input-14-888e234e9e37>
+Type:      function
+
+In [17]: printhi??
+Signature: printhi()
+Source:   
+def printhi():
+    print("HI")
+File:      ~/Work/python/data_science/numpy/<ipython-input-14-888e234e9e37>
+Type:      function
+
+In [18]: 
+```
+
+## Running scripts
+
+Any python scripts can be run by the '%run' command. The example shows running a script file name "script.py" with this
+command.
+For example:
+```
+In [22]: cat script.py
+print("Hi")
+
+In [23]: %run script.py
+Hi
+
+In [24]: 
+
+```
+
+
+
+
+
+
+
+
