@@ -1,0 +1,8 @@
+PC A : 192.168.1.1
+PC B : 192.168.1.2
+
+From PC A: sending file to PC B
+[root@buildroot ~]# scp test_temp i18342@192.168.1.1:
+
+From PC A: Receiving file to PC B
+[root@buildroot ~]# scp i18342@192.168.1.1:/home/i18342/examples.desktop .
