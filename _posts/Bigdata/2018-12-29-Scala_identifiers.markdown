@@ -2,15 +2,29 @@
 layout: post
 title:  "SCALA IDENTIFIERS"
 date:   2018-12-29 19:45:31 +0530
-categories: wireless
+categories: Bigdata
 ---
 
-#### Installing AIRCRACK on UBUNTU
-```
-root@root$ sudo apt install aircrack-ng
-```
+#### What is Scala
+Scala is a 
+	1. jvm based language - Scala project binary can be run directly in the jvm environment
+	2. Functional programming language - Functional programming means avoiding mutability. Scala
+	language has provision to avoid mutability.
+	3. Pure OOL (Object Oriented Language) - In Scala everything is object. 
+	There is no primitive datatypes in Scala
 
-#### Creating a interface for monitor mode
+#### Functional Programing
+
+functional programing literary means avoiding changing the surroundings.
+In short this features is called as avoiding mutability.
+However is doesnot mean always avoid mutability. We will see this point more in detail 
+in the next point.
+
+
+#### Values and Variables
+
+what is pure. In scala there is no primitive datatype.
+Everything is object in Scala.
 ```
 root@root$ airmon-ng start wlp1s0
 
@@ -37,15 +51,4 @@ root@vieshoth-PC:~#
 
 ```
 
-#### Installing wireshark
-```
-root@root$ sudo add-apt-repository ppa:wireshark-dev/stable
-root@root$ sudo apt-get update
-root@root$ sudo apt-get install wireshark
 
-```
-
-#### Instantiate Wireshark
-```
-root@root$ wireshark
-```
