@@ -7,19 +7,29 @@ categories: Bigdata
 
 #### What is Scala
 Scala is a 
-	1. jvm based language - Scala project binary can be run directly in the jvm environment
-	2. Functional programming language - Functional programming means avoiding mutability. Scala
-	language has provision to avoid mutability.
-	3. Pure OOL (Object Oriented Language) - In Scala everything is object. 
-	There is no primitive datatypes in Scala
+	* jvm based language - Scala project binary can be run directly in the jvm environment
+	* Functional programming language - Functional programming means avoiding mutability. Scala 	language has provision to avoid mutability.
+	* Pure OOL (Object Oriented Language) - In Scala everything is object. There is no primitive datatypes in Scala
 
 #### Functional Programing
 
 functional programing literary means avoiding changing the surroundings.
 In short this features is called as avoiding mutability.
-However is doesnot mean always avoid mutability. We will see this point more in detail 
-in the next point.
+Mutability means modifying.
+However it doesnot mean it is always avoiding mutability. ofcourse it is possible to write a function 
+which modifies the sorrounding data. but there should be a clear cut seperation of what is mutabiliy and immutability.
+write a seperate function for mutability and imutability.
 
+Basically this a function is used to process some data. This processed data either we can save
+the data or return the data.
+saving the data means saving it to a file or variale or dB or global datastructure. This is nothing but modifying 
+the surrounding.
+
+return - immutability.
+non return - mutability.
+
+So Scala is more suitable for distributed application. 
+- Running the same prg in different env. since it follows immutability it doesnot change environment. so it is safe.
 
 #### Values and Variables
 
