@@ -65,39 +65,17 @@ scala> y = 20
 It is not required to explicitly give the data type to an identifiers. The Scala will infer the data type
 from the given value.
 
+In the below example as you can see it detected the datatype from the assigned value.
+
 ```
 scala> var x = 10
 x: Int = 10
-```
 
+scala> val s = "String"
+s: String = String
 
-
-what is pure. In scala there is no primitive datatype.
-Everything is object in Scala.
-```
-root@root$ airmon-ng start wlp1s0
-
-
-Found 5 processes that could cause trouble.
-If airodump-ng, aireplay-ng or airtun-ng stops working after
-a short period of time, you may want to kill (some of) them!
-
-PID	Name
-764	avahi-daemon
-784	avahi-daemon
-870	NetworkManager
-1058	wpa_supplicant
-22768	dhclient
-Process with PID 22768 (dhclient) is running on interface wlp1s0
-
-
-Interface	Chipset		Driver
-
-wlp1s0		Intel AC	iwlwifi - [phy0]
-				(monitor mode enabled on mon0)
-
-root@vieshoth-PC:~# 
+scala> val d = 10.5
+d: Double = 10.5
 
 ```
-
 
