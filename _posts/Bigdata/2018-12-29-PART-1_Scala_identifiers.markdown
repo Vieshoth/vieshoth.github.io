@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "SCALA IDENTIFIERS"
+title:  "PART-1: SCALA IDENTIFIERS"
 date:   2018-12-29 19:45:31 +0530
 categories: Bigdata
 ---
 
 #### What is Scala
 Scala is a 
-	* jvm based language - Scala project binary can be run directly in the jvm environment
-	* Functional programming language - Functional programming means avoiding mutability. Scala 	language has provision to avoid mutability.
-	* Pure OOL (Object Oriented Language) - In Scala everything is object. There is no primitive datatypes in Scala
+- jvm based language - Scala project binary can be run directly in the jvm environment
+- Functional programming language - Functional programming means avoiding mutability. Scala 	language has provision to avoid mutability.
+- Pure OOL (Object Oriented Language) - In Scala everything is object. There is no primitive datatypes in Scala
 
 #### Functional Programing
 
@@ -28,8 +28,7 @@ the surrounding.
 return - immutability.
 non return - mutability.
 
-So Scala is more suitable for distributed application. 
-- Running the same prg in different env. since it follows immutability it doesnot change environment. so it is safe.
+So Scala is more suitable for distributed application. That is running the same programme in different environment. Since it follows immutability it doesnot change environment. so it is safe.
 
 #### Identifiers
 
@@ -60,7 +59,7 @@ scala> y = 20
          ^
 ```
 
-##### Identifiers data type
+#### Identifiers data type
 
 It is not required to explicitly give the data type to an identifiers. The Scala will infer the data type
 from the given value.
