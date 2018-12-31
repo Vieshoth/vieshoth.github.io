@@ -31,7 +31,46 @@ non return - mutability.
 So Scala is more suitable for distributed application. 
 - Running the same prg in different env. since it follows immutability it doesnot change environment. so it is safe.
 
-#### Values and Variables
+#### Identifiers
+
+In Scala there are two identifiers. 
+They are 
+	1. Variable Identifiers
+	2. Value Identifiers. 
+	
+Variable identifiers are defined with the "var" keyword. And it is modifiable.
+```
+scala> var x = 10
+x: Int = 10
+
+scala> x = 20
+x: Int = 20
+
+```
+On the other the valie identifiers are defined with "val" keyword and 
+Value identifiers are not modifiable. 
+
+```
+scala> val y = 10
+y: Int = 10
+
+scala> y = 20
+<console>:12: error: reassignment to val
+       y = 20
+         ^
+```
+
+##### Identifiers data type
+
+It is not required to explicitly give the data type to an identifiers. The Scala will infer the data type
+from the given value.
+
+```
+scala> var x = 10
+x: Int = 10
+```
+
+
 
 what is pure. In scala there is no primitive datatype.
 Everything is object in Scala.
