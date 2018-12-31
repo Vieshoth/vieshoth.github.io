@@ -190,54 +190,44 @@ a: Unit = ()
 
 ```
 
-#### FOR LOOP
+#### FOR LOOP 
+
+For loop too as mutable version and the immutable version.
 
 syntax for mutability
 for (i <- interator){
 
 }
 
+Ex:- 
+```
+scala> for (i <- 1 to 5){
+     | println(i)
+     | }
+1
+2
+3
+4
+5
+
+```
 syntax for immutability
 val x = for (i <- interator) yield {
-
+.
+.
 non assignment
 }
+Ex:-
+```
+scala> val v = for (i<-1 to 5) yield {
+     |   i+2
+     | }
+v: scala.collection.immutable.IndexedSeq[Int] = Vector(3, 4, 5, 6, 7)
+
+```
+Here return value from the for loop is a collection.
 
 
-val z = x+ y
-here + is not a operator it is a method.
-val z = x.+(y)
-
-mutability of for loop
-
-for (i <- 1 to 5){}
-
-for (i <- 1 to 10 by 2 ){}
-
-for (i <- 1.0 to 10.0 by .5 ){}
-
-immutability of for loop
-
-val v = for (i<-1 to 5) yield {
-	i+2
-}
-
-return value from the for loop is a collection
-
-first character of for loop:
-
-a = Array(Scala, Java, Python)
-val c = for (i <- a ){
-			a(0)
-			}
-
-
-String
-
-val x = "Helloworld"
-
-x.last
-x(x.size -1)
 
 
 
