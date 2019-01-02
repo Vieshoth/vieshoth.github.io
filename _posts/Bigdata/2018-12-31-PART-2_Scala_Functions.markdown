@@ -49,7 +49,7 @@ scala>
 ```
 
 This function return Unit datatype that means it returns nothing. So nothing was assigned to the variable z.
-It is mandatory to mention the datatype for the parameters.
+NOTE: It is mandatory to mention the datatype for the parameters.
 
 #### Function objects. 
 
@@ -68,7 +68,54 @@ And an Int object called y created from assigning the Int object x.
 
 In similar fashion we can create function object.
 
-#### Creating a function object from the another function.
+One can perform the following operations with functions in Scala
+- Assign a value to a function obj
+- Assign a function object to another function object 
+- Pass a function object as a parameter to a function 
+- Return a function object from a function 
+
+
+#### Creating a function object from the another function object.
+
+Syntax to create a function object from another functio object.
+val <FUNCTION OBJ NAME>:<FUNCTION DATATYPE> = FUNCTION
+	
+FUNCTION DATATYPE:- 
+	INPUT DATATYPE => RETURN DATATYPE
+	
+Ex:-
+First lets create a function
+```
+scala> def squareit(a:Int) = a*a
+squareit: (a: Int)Int
+```
+
+Now create a function object from this function
+```
+scala> val mySquareit:Int => Int = squareit
+mySquareit: Int => Int = $$Lambda$1117/1978141335@5b8853
+
+scala> mySquareit(10)
+res0: Int = 100
+
+```
+
+
+def doubler (a:Int) = a*2
+
+val myDoubler:FUN_DATATYPE = doubler
+
+WHAT IS FUNCTION DATATYPE
+
+input datatype => Return datatype
+
+for doubler function 
+Int => Int
+
+
+val myDoubler:Int => Int = doubler
+
+
 
 
 
