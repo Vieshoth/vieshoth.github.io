@@ -90,6 +90,8 @@ scala> def squareit(a:Int) = a*a
 squareit: (a: Int)Int
 ```
 
+Function datatype for the squareit function is :  Int => Int
+
 Now create a function object from this function
 ```
 scala> val mySquareit:Int => Int = squareit
@@ -97,25 +99,34 @@ mySquareit: Int => Int = $$Lambda$1117/1978141335@5b8853
 
 scala> mySquareit(10)
 res0: Int = 100
-
 ```
 
 
-def doubler (a:Int) = a*2
-
-val myDoubler:FUN_DATATYPE = doubler
-
-WHAT IS FUNCTION DATATYPE
-
-input datatype => Return datatype
-
-for doubler function 
-Int => Int
+#### Creating a function object from the another function Literal.
 
 
-val myDoubler:Int => Int = doubler
+What is function Literal?
+A function without a name is called Function Literal.
 
+Function literal is also referred as Anonymous function.
 
+Lets take our "squareit" function. 
+```
+def squareit(a:Int) = a*a
+```
+In this funciton if remover the funciton name that is "squareit" itself. The remaining will be funcion Literal.
+That is.
+(a:Int) = a*a
+
+While assigning this function literal to a function object change the "=" sign to "=>".
+```
+scala> val mySquareit = (a:Int) => a*a
+mySquareit: Int => Int = $$Lambda$1139/304172847@756c67cd
+
+scala> 
+
+```
+Donot forget to add the brackets for the function literal'a input argument.
 
 
 
