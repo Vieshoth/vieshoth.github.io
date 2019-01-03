@@ -1,12 +1,31 @@
 ---
 layout: post
-title:  "PART-2: SCALA FUNCTIONS"
+title:  "PART-3: SCALA HOF"
 date:   2018-12-31 19:45:31 +0530
 categories: Bigdata
 ---
 
-Scala is functioning progrmming language. And Functions are called as first class citizens because it 
-can be used as basic objects.
+## HOF (HIGHER ORDER FUNCTION)
+
+In the last section we saw how to create a function object.
+In this section lets see how to pass a function object as parameter to a function.
+
+In Scala a function which takes another function as a parameter is called Higher Order Function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Function Definition
 
@@ -73,64 +92,6 @@ One can perform the following operations with functions in Scala
 - Assign a function object to another function object 
 - Pass a function object as a parameter to a function 
 - Return a function object from a function 
-
-
-#### Creating a function object from the another function object.
-
-Syntax to create a function object from another functio object.
-val <FUNCTION OBJ NAME>:<FUNCTION DATATYPE> = FUNCTION
-	
-FUNCTION DATATYPE:- 
-	INPUT DATATYPE => RETURN DATATYPE
-	
-Ex:-
-First lets create a function
-```
-scala> def squareit(a:Int) = a*a
-squareit: (a: Int)Int
-```
-
-Function datatype for the squareit function is :  Int => Int
-
-Now create a function object from this function
-```
-scala> val mySquareit:Int => Int = squareit
-mySquareit: Int => Int = $$Lambda$1117/1978141335@5b8853
-
-scala> mySquareit(10)
-res0: Int = 100
-```
-
-
-#### Creating a function object from the another function Literal.
-
-
-What is function Literal?
-A function without a name is called Function Literal.
-
-Function literal is also referred as Anonymous function.
-
-Lets take our "squareit" function. 
-```
-def squareit(a:Int) = a*a
-```
-In this funciton if remover the funciton name that is "squareit" itself. The remaining will be funcion Literal.
-That is.
-(a:Int) = a*a
-
-While assigning this function literal to a function object change the "=" sign to "=>".
-```
-scala> val mySquareit = (a:Int) => a*a
-mySquareit: Int => Int = $$Lambda$1139/304172847@756c67cd
-
-scala> 
-
-```
-Donot forget to add the brackets for the function literal'a input argument.
-
-Here now mySquareit is a function object. and here not require to specify the datatype
-
-
 
 
 
