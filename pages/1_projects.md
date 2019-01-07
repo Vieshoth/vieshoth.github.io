@@ -21,18 +21,6 @@ NPL(Neural Parallel Language) is a new programming language. It was started as m
 Throughout the years, I have written over a million lines of code with it. All my other projects since 2005 is written in it. 
  
 
-## Paracraft
-* Started: 2012-present
-* Website: [www.paracraft.cn](http://www.paracraft.cn)
-   * [ParacraftSDK](https://github.com/LiXizhi/ParaCraftSDK)
-   * Self Learning College
-
-Paracraft is a standalone 3d animation software for everyone. 
-It was my exploration of CAD(computer aided design) using the vision brain (i.e. your right brain).
-Paracraft is an extensible tool that everyone can learn to create videos and computer programs.
-I am using it to promote NPL language in self learning college to teach students programming.  
-
-
 ## ParaEngine
 * Started: 2005-present
 * Website: [www.paraengine.com](http://www.paraengine.com)
