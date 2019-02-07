@@ -53,7 +53,7 @@ Here for this example, let us take emmc as our device to partiton.
 It has its device nod as “/dev/mmcblk0” in linux.
 
 Provide this node as an input argument to fdisk command.
-you will get an output similar to the output in the below shown image.
+you will get an output similar to the output in the image shown below.
 
 ```shell
  └─ $ ▶ sudo fdisk /dev/mmcblk0
@@ -67,7 +67,7 @@ Be careful before using the write command.
 Command (m for help): 
 ```
 
-Inside the fdisk command prompt press m and enter. It will give the available options.
+In the fdisk command prompt entering the character 'm' will provide the available options.
 ```
 Command (m for help): m
 
@@ -112,7 +112,7 @@ Command (m for help):
 
 ```
 
-To get the device details and the partition table type p and enter.
+To get the device details and the partition table enter the character 'p'.
 ```shell
 Command (m for help): p
 Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
@@ -125,16 +125,16 @@ Disk identifier: 0x00000000
 
 ```
 
-You will get an output similar to this.
+You will get the above output.
 This output shows the number of bytes and sectors this eMMC device has. Since this emmc device is not partitioned yet it doesn’t show any partitions.
 
 It shows this emmc has 7818182656 bytes (that is 7.3 GB) and 15269888 number of sectors.
 Sector is known as the smallest part of the memory.
 
 From the same above image it shows the size of the sector as 512 bytes.
-So if you divide the total bytes with 512 you will get number of sectors.
+So dividing the total bytes with 512 you will get number of sectors.
 
-Partition is done in terms of sectors.
+Partitioning is done in terms of sectors.
 
 
 ## Creating partition
@@ -148,11 +148,11 @@ Third partition with ramaining memory and fat file system
 
 so lets start partitioning the eMMC
 
-* Inside the fdisk command prompt press n and enter
+* Inside the fdisk command prompt enter the character 'n'.
 * It will ask for partition type. Select the 'p' option for primary.
 * And then select the partition number, since this is our first partition we go with the default one.
 * The sector doesnot start with 0. Because it needs some space to store partition table and some meta data. Here in this eMMC it starts from 2048. So we too go with the defualt value.
-* And then the last sector. That means where the partition should end. To this we need to do a small calculation. As we said earlier our first partition should have 100MB. To find the last sector divide the 100MB with 512 bytes and add 2018
+* And then the last sector. This means where the partition should end. To this we need to do a small calculation. As we said earlier our first partition should have 100MB. To find the last sector divide the 100MB with 512 bytes and add 2018
 
 Ex: (100*1024*1024/512) + 2048 = 206848
 now give the last sector value as 206848 and press enter.
@@ -168,10 +168,20 @@ Last sector, +sectors or +size{K,M,G,T,P} (2048-15523839, default 15523839): 206
 
 Created a new partition 1 of type 'Linux' and of size 100 MiB.
 ```
-Now we have created our first partition. To check it press p.
+Now we have created our first partition. To check enter the character 'p' again.
+```shell
+Command (m for help): p
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p.png)
+Device         Boot Start    End Sectors  Size Id Type
+/dev/mmcblk0p1       2048 206848  204801  100M 83 Linux
 
+```
 
 Now lets create the second partition
 leave the first sector as default. that is 208896.
@@ -181,63 +191,160 @@ Now lets calculate the last sector.
 
 last sector = (3*1024*1024*1024/512) + 208896
 = 6500352
+```shell
+Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): 
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n2.png)
+Using default response p.
+Partition number (2-4, default 2): 
+First sector (206849-15523839, default 208896):        
+Last sector, +sectors or +size{K,M,G,T,P} (208896-15523839, default 15523839): 6500352
 
-now go and check whether it is showing the first partition size as 3GB by pressing 'p'.
+Created a new partition 2 of type 'Linux' and of size 3 GiB.
+```
+now lets check whether it is showing the second partition size as 3GB by entering 'p'.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p2.png)
+```shell
+Command (m for help): p
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
 
-So we have created two partiotions. Did you notice the type of this partition? It shows the type is Linux. But we want that first partition as Fat32. In linux systems when you create a partition the default partition type is ext3 (which is shown as Linux).
+Device         Boot  Start     End Sectors  Size Id Type
+/dev/mmcblk0p1        2048  206848  204801  100M 83 Linux
+/dev/mmcblk0p2      208896 6500352 6291457    3G 83 Linux
+
+
+```
+
+Now we have created two partiotions. Did you notice the type of this partition? It shows as "Linux". But our first partition suppose to be in Fat32 format. If the partition is created in the Linux systems it will go for the default partition which is ext3 (which is shown as Linux).
 
 
 ## Chnaging the type of the partition
 
-Now lets change the first partition type to FAT32. But how do we do it?. 
-* Type m and search for the command to change the partition type. 
-* Command ‘t’ is used to change the partition type. So type 't' and press enter. 
+Now lets change the first partition type to FAT32 format. But how do we do it?. 
+* ENter the character 'm' and search for the command to change the partition type. 
+* Enter the character ‘t’ to change the partition type.  
 * Next it will ask for which partition to be selected for this operation. Give the partition numeber an input. 
 In this case it is '1'. 
-* Now to check the available partiton type press “L”. You will find out for FAT32 format, the hexcode is “c”.
+* Now to check the available partiton enter “L”. You will find out for FAT32 format, the hexcode is “c”.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/hexcode.png)
+```shell
+Command (m for help): t
+Partition number (1,2, default 2): 1
+Partition type (type L to list all types): c
 
-Now check out the partition type by pressing “p”
+Changed type of partition 'Linux' to 'W95 FAT32 (LBA)'.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p3.png)
+```
+Lets check the partition type now
+```shell
+Command (m for help): p
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
+
+Device         Boot  Start     End Sectors  Size Id Type
+/dev/mmcblk0p1        2048  206848  204801  100M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      208896 6500352 6291457    3G 83 Linux
+
+```
 
 Lets create the third and final partition and chenge the partition type to FAT32.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n3.png)
+```shell
+Command (m for help): n
+Partition type
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended (container for logical partitions)
+Select (default p): 
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/t.png)
+Using default response p.
+Partition number (3,4, default 3): 
+First sector (206849-15523839, default 6502400): 
+Last sector, +sectors or +size{K,M,G,T,P} (6502400-15523839, default 15523839): 
 
-now press “p” and check the created partitions.
+Created a new partition 3 of type 'Linux' and of size 4.3 GiB.
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p4.png)
+Command (m for help): t
+Partition number (1-3, default 3): 
+Partition type (type L to list all types): c
 
-Once the partitions are created format it with appropriate commands.
+Changed type of partition 'Linux' to 'W95 FAT32 (LBA)'.
 
+```
+
+check the partition type.
+
+```shell
+Command (m for help): p
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
+
+Device         Boot   Start      End Sectors  Size Id Type
+/dev/mmcblk0p1         2048   206848  204801  100M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2       208896  6500352 6291457    3G 83 Linux
+/dev/mmcblk0p3      6502400 15523839 9021440  4.3G  c W95 FAT32 (LBA)
+
+```
+Enter the character 'w' to shave and exit the fdisk shell.
 
 ## Formating partition
 
-To format FAT32 partition we have command called mkfs.vfat.
+Upon creating the partitions, formatting the partitions is must.
+which can be done using the command mkfs.<<partition_type>>
+Ex:
+For fat partition:  sudo mkfs.vfat <<partition_device>> -n <<name>>
+ 
+ ```shell
+  └─ $ ▶ sudo mkfs.vfat /dev/mmcblk0p1 -n boot
+mkfs.fat 3.0.28 (2015-05-16)
+mkfs.fat: warning - lowercase labels might not work properly with DOS or Windows
+mkfs.vfat: /dev/mmcblk0p1 contains a mounted filesystem.
 
-The syntax is: sudo mkfs.vfat <partition_device> -n <name>
+ ```
 
-For ext3
+For ext3 partition: sudo mkfs.ext3 <<partition_device>> -L <<name>>
 
-The syntax is: sudo mkfs.ext3 <partition_device> -L <name>
+ ```shell
+  └─ $ ▶ sudo mkfs.ext3 /dev/mmcblk0p2 -L rootfs
+mke2fs 1.42.13 (17-May-2015)
+/dev/mmcblk0p2 contains a ext4 file system
+	last mounted on /media/i18342/3ae983bb-f395-42ca-a519-474512fb9ddd on Wed Feb  6 10:18:08 2019
+Proceed anyway? (y,n) y
+Discarding device blocks: done                            
+Creating filesystem with 131072 4k blocks and 32768 inodes
+Filesystem UUID: 56398aba-8595-44fe-870f-e0a6be3c520e
+Superblock backups stored on blocks: 
+	32768, 98304
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/boot.png)
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+ ```
 
 Ok now you know how to partition a eMMC or sdcard.
 
 ## SFDISK Command 
 
-There is another way of doing this with just one command. That command is sfdisk. Open a partition.sh file using any editer and add the following lines.
+There is another way of doing this with just one command. That command is called as sfdisk. create a partition.sh file using any editer and add the following content.
 
-```
+```shell
 echo “#############partitioning…#################”
 node=/dev/mmcblk0
 
@@ -272,9 +379,7 @@ The first argument '3' represents the starting byte of  the partition interms of
 The second argument '103' represents the size of the partition
 And the third argument "0c" represents the partition type
 
-
-
 Hope this article helps in understaing the concept of partitioning the memory in linux based OS.
 
-Please type you feedback and comments in the comments section.
+
 
