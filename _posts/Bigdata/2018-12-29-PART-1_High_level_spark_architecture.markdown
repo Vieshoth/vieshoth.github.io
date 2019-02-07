@@ -26,6 +26,18 @@ Spark runs on top of the following file systems.
 Mesos and Yarn are external Operating system and it does not come along with spark package. Standalone is an operating 
 system which resides with spark.
 
+The most widly used file system for spark is HDFS or Hadoop Distributed File System. HDFS consists of Data nodes and Name nodes.
 
-The most widly used file system for spark is HDFS or Hadoop File System.
+Every worker service conveys its resources avaialable on its system to the master services.
+
+### Driver
+It first creates and DAG and then stages and at last tasks.
+
+When we did a put command what internally happems is from my laptop it contacted the master service wich run in the name node.
+And it will request the master service to allocate the resource for the file which it wants to save.
+Before that the local system(the laptop in this case) will alloca
+
+The master service will have all the information about the Data nodes becuase the worker serices keeps on updating about data node resources to master service.
+
+The master service in return will the information of three data nodes for each block.
 
