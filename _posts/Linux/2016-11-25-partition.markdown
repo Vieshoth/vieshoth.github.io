@@ -379,7 +379,7 @@ The first argument '3' represents the starting byte of  the partition interms of
 The second argument '103' represents the size of the partition
 And the third argument "0c" represents the partition type
 
-Hope this article helps in understaing the concept of partitioning the memory in linux based OS.
+Hope this article helped in understaing the concept of partitioning the memory in linux based OS.
 
 
 
