@@ -14,7 +14,6 @@ fdisk and sfdisk(does the same work as fdisk but in a different manner)
 
 “fdisk -h” command gives you an idea about what it does and how it should be used.
 ```shell
-i18342 @ CHE-LT-WSGAPPS1 [~/work_new/Q4_18/linux-4.19.17]
  └─ $ ▶ fdisk -h
 
 Usage:
@@ -55,8 +54,21 @@ For more details see fdisk(8).
 Here for this example, let us take emmc as our device to partiton.
 It has its device nod as “/dev/mmcblk0” in linux.
 
-Give this node as an input argument to fdisk command.
+Provide this node as an input argument to fdisk command.
 you will get an output similar to the output in the below shown image.
+
+```shell
+ └─ $ ▶ sudo fdisk /dev/mmcblk0
+[sudo] password for i18342: 
+
+Welcome to fdisk (util-linux 2.27.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): 
+```
+
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskmmcblk.png)
 
 Inside the fdisk command prompt press m and enter. It will give the available options.
