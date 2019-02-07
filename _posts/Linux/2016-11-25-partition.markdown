@@ -45,8 +45,6 @@ Options:
 For more details see fdisk(8).
 
 ```
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdisk_command.png)
-
 
 ## Knowing about sectors and bytes
 
@@ -69,14 +67,63 @@ Be careful before using the write command.
 Command (m for help): 
 ```
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskmmcblk.png)
-
 Inside the fdisk command prompt press m and enter. It will give the available options.
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdiskm.png)
+```
+Command (m for help): m
+
+Help:
+
+  DOS (MBR)
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save & Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+
+
+Command (m for help): 
+
+```
 
 To get the device details and the partition table type p and enter.
+```shell
+Command (m for help): p
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/partitiontype.png)
+
+```
 
 You will get an output similar to this.
 This output shows the number of bytes and sectors this eMMC device has. Since this emmc device is not partitioned yet it doesn’t show any partitions.
@@ -109,9 +156,18 @@ so lets start partitioning the eMMC
 
 Ex: (100*1024*1024/512) + 2048 = 206848
 now give the last sector value as 206848 and press enter.
+```shell
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 
+First sector (2048-15523839, default 2048): 
+Last sector, +sectors or +size{K,M,G,T,P} (2048-15523839, default 15523839): 206848
 
-![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/n.png)
-
+Created a new partition 1 of type 'Linux' and of size 100 MiB.
+```
 Now we have created our first partition. To check it press p.
 
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/p.png)
