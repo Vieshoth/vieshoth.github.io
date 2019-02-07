@@ -13,6 +13,39 @@ In linux, there is a handy command called fdisk.
 fdisk and sfdisk(does the same work as fdisk but in a different manner)
 
 “fdisk -h” command gives you an idea about what it does and how it should be used.
+```shell
+i18342 @ CHE-LT-WSGAPPS1 [~/work_new/Q4_18/linux-4.19.17]
+ └─ $ ▶ fdisk -h
+
+Usage:
+ fdisk [options] <disk>      change partition table
+ fdisk [options] -l [<disk>] list partition table(s)
+
+Display or manipulate a disk partition table.
+
+Options:
+ -b, --sector-size <size>      physical and logical sector size
+ -B, --protect-boot            don't erase bootbits when create a new label
+ -c, --compatibility[=<mode>]  mode is 'dos' or 'nondos' (default)
+ -L, --color[=<when>]          colorize output (auto, always or never)
+                                 colors are enabled by default
+ -l, --list                    display partitions end exit
+ -o, --output <list>           output columns
+ -t, --type <type>             recognize specified partition table type only
+ -u, --units[=<unit>]          display units: 'cylinders' or 'sectors' (default)
+ -s, --getsz                   display device size in 512-byte sectors [DEPRECATED]
+     --bytes                   print SIZE in bytes rather than in human readable format
+
+ -C, --cylinders <number>      specify the number of cylinders
+ -H, --heads <number>          specify the number of heads
+ -S, --sectors <number>        specify the number of sectors per track
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see fdisk(8).
+
+```
 ![atl text](https://raw.githubusercontent.com/Vieshoth/vieshoth.github.io/master/images/part/fdisk_command.png)
 
 
