@@ -39,5 +39,5 @@ Before that the local system(the laptop in this case) will alloca
 
 The master service will have all the information about the Data nodes becuase the worker serices keeps on updating about data node resources to master service.
 
-The master service in return will the information of three data nodes for each block.
+The master service in return will send the information of three data nodes and request to store that block in those data nodes.
 
