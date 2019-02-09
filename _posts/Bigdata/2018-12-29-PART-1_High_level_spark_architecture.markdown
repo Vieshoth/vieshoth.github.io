@@ -6,8 +6,8 @@ categories: Bigdata
 ---
 
 Spark architecture consists of 5 components
-1. Worker
-2. Master
+1. Worker Service
+2. Master Service or Cluster Manager
 3. Driver
 4. Executer
 5. Tasks
@@ -29,6 +29,9 @@ system which resides with spark.
 The most widly used file system for spark is HDFS or Hadoop Distributed File System. HDFS consists of Data nodes and Name nodes.
 
 Every worker service conveys its resources avaialable on its system to the master services.
+
+### Worker Services
+Worker Services are daemon processes which runs on the Data Nodes. It frequrntly updates the data nodes's resources to the Master Services. The resources are CPUs and Memory.
 
 ### Driver
 It first creates and DAG and then stages and at last tasks.
