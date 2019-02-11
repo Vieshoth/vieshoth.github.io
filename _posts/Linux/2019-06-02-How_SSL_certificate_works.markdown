@@ -7,6 +7,7 @@ categories: Linux
 This blog explains how ssl certificate works when you entered a web address with https in the browser.
 
 The moment you press enter after typing website address lets say amazon.com in the browser. The brower will send a webpage request to amazon server. The amazon server in return sends ssl certificate and the public key to the browser.
+![GitHub Logo](/images/ssl_certificate/page_request.PNG)
 
 Upon receiving the public key and the ssl certificate from amazon server the browser must verify this ssl certificate by sending it to a CA. The Browser encrypts this ssl certificate with the CA's public key before sending it to CA.
 A point to worth noting is all the browser comes with the public keys of all major CAs.
