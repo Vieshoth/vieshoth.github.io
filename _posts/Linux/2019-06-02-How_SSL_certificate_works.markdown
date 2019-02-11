@@ -11,6 +11,7 @@ The moment you press enter after typing website address lets say amazon.com in t
 
 Upon receiving the public key and the ssl certificate from amazon server the browser must verify this ssl certificate by sending it to a CA. The Browser encrypts this ssl certificate with the CA's public key before sending it to CA.
 A point to worth noting is all the browser comes with the public keys of all major CAs.
+
 ![GitHub Logo](/images/ssl_certificate/verifying_withCA.PNG)
 
 After successfull verification the browser will create a two symmertic key. 
