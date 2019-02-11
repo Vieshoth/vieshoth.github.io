@@ -9,7 +9,7 @@ permalink: /about/
 {:toc}
 
 ## About the site
-This is a personal website of Vieshoth, created with github and jekyll. Which contains materials on Embedded topics.
+I write technical blogs in this site about the topics which I learnt, understood and which I feel it would be helpfull for others.
 
 ### Admin tools
 * site [configuration file](https://github.com/LiXizhi/lixizhi.github.io/blob/master/_config.yml)
