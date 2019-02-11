@@ -1,46 +1,16 @@
 ---
 layout: post
-title:  "Working of HTTPS"
+title:  "How SSL certificate works"
 date:   2019-02-06 19:45:31 +0530
 categories: Linux
 ---
+This blog explains how ssl certificate works when you entered a web address with https in the browser.
 
-Spark architecture consists of 5 components
-1. Worker Service
-2. Master Service or Cluster Manager
-3. Driver
-4. Executer
-5. Tasks
+The moment you press enter after typing website address lets say amazon.com in the browser. The brower will send a webpage request to amazon server. The amazon server in return sends ssl certificate and the public key to the browser.
 
-### Cluster Manager
-A cluster is distributed computing environment which stores a huge amount data. This cluster is made of a file system 
-and a Distributed operating system. This operating system consists of worker deamon and master deamon. The master daemon 
-generally referred as
-Cluster manager.
-Spark runs on top of the following file systems.
-- Mesos
-- Yarn
-- Standalone
-- Local
+Upon receiving the public key and the ssl certificate from amazon server the browser must verify this ssl certificate by sending it to a CA. The Browser encrypts this ssl certificate with the CA's public key before sending it to CA.
+A point to worth noting is all the browser comes with the public keys of all major CAs.
 
-Mesos and Yarn are external Operating system and it does not come along with spark package. Standalone is an operating 
-system which resides with spark.
+After successfull verification the browser will create a two symmertic key. It keeps one with it and encrypts the other with the amazon server's public key and sends it to the amazon server.
 
-The most widly used file system for spark is HDFS or Hadoop Distributed File System. HDFS consists of Data nodes and Name nodes.
-
-Every worker service conveys its resources avaialable on its system to the master services.
-
-### Worker Services
-Worker Services are daemon processes which runs on the Data Nodes. It frequrntly updates the data nodes's resources to the Master Services. The resources are CPUs and Memory.
-
-### Driver
-It first creates and DAG and then stages and at last tasks.
-
-When we did a put command what internally happems is from my laptop it contacted the master service wich run in the name node.
-And it will request the master service to allocate the resource for the file which it wants to save.
-Before that the local system(the laptop in this case) will alloca
-
-The master service will have all the information about the Data nodes becuase the worker serices keeps on updating about data node resources to master service.
-
-The master service in return will send the information of three data nodes and request to store that block in those data nodes.
-
+The amazon server decrypts this symetric key with its private key and from now on both the browser and the amazon server uses this symmetric key to encrypt and decrypt data exchange to be exchanged between them.
