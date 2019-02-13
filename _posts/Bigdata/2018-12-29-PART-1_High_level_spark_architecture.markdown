@@ -72,5 +72,7 @@ spark-submit command in spark client mode
 The jar file is copied to Edge node
 The Driver first creates the DAG.
 
+In the spark submit the driver will ask 
+
 
 
