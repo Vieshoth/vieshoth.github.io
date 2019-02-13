@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How SSL certificate works"
+title:  "HOW SSL CERTIFICATE WORKS"
 date:   2019-02-06 19:45:31 +0530
 categories: Linux
 ---
