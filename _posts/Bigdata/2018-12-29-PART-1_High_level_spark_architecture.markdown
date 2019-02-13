@@ -12,7 +12,7 @@ Spark architecture consists of 5 components
 4. Executer
 5. Tasks
 
-### Cluster Manager
+### Cluster Manager or Worker Service
 A cluster is distributed computing environment which stores a huge amount data. This cluster is made of a file system 
 and a Distributed operating system. This operating system consists of worker deamon and master deamon. The master daemon 
 generally referred as
@@ -33,6 +33,8 @@ Every worker service conveys its resources avaialable on its system to the maste
 ### Worker Services
 Worker Services are daemon processes which runs on the Data Nodes. It frequrntly updates the data nodes's resources to the Master Services. The resources are CPUs and Memory.
 
+### Name Node
+
 ### Driver
 It first creates and DAG and then stages and at last tasks.
 
@@ -44,6 +46,7 @@ The master service will have all the information about the Data nodes becuase th
 The master service in return will send the information of three data nodes and request to store that block in those data nodes.
 Now the user can directly store the B1 block in the data node
 By default the replication is 3.
+![GitHub Logo](/images/ssl_certificate/page_request.PNG)
 
 Again it will contact Worker serivice and request for resources for the next block B2. So again Worker service will allocate three nodes and request the user to store it in those three nodes. 
 
