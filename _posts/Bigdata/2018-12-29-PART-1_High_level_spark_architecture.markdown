@@ -6,18 +6,17 @@ categories: Bigdata
 ---
 
 Spark architecture consists of 5 components
-1. Worker Service
-2. Master Service or Cluster Manager
+1. Node Manager
+2. Resource Manager or Cluster Manager
 3. Driver
 4. Executer
 5. Tasks
 
 ### Cluster Manager or Worker Service
 A cluster is distributed computing environment which stores a huge amount data. This cluster is made of a file system 
-and a Distributed operating system. This operating system consists of worker deamon and master deamon. The master daemon 
-generally referred as
-Cluster manager.
-Spark runs on top of the following file systems.
+and a Distributed operating system. This operating system consists of Node Manager and Resource Manager. The Resource Manager 
+generally referred as Cluster manager.
+Spark runs on top of the following OS.
 - Mesos
 - Yarn
 - Standalone
@@ -26,14 +25,10 @@ Spark runs on top of the following file systems.
 Mesos and Yarn are external Operating system and it does not come along with spark package. Standalone is an operating 
 system which resides with spark.
 
-The most widly used file system for spark is HDFS or Hadoop Distributed File System. HDFS consists of Data nodes and Name nodes.
-
-Every worker service conveys its resources avaialable on its system to the master services.
-
-### Worker Services
-Worker Services are daemon processes which runs on the Data Nodes. It frequrntly updates the data nodes's resources to the Master Services. The resources are CPUs and Memory.
+The most widly used file system for spark is HDFS or Hadoop Distributed File System. HDFS consists of Data nodes srvices and Name nodes services.
 
 ### Name Node
+Name Nodes are daemon processes which runs on the Data Nodes. It frequently updates the data nodes's resources to the Reource Manager. The resources are CPUs and Memory.
 
 ### Driver
 It first creates and DAG and then stages and at last tasks.
@@ -63,6 +58,19 @@ Before that the local system(the laptop in this case) will allocate
 
 
 Lets say we have 
+
+### Heading
+
+For this example lets assume we are running YARN Operating System. And in Yarn OS the Master Services is called as Resource Manager (RM) and the Worker Services is called as Node Manager (NM)
+
+Edge node is the last point a user can reach. A cluster can only be access by a Cluster Admin. Edge node is different from Name node but part of cluster. 
+Spark submit command is run from Edge node. As soon as we run the Spark submit command the Driver process will run as part of the spark-submit command itself. 
+Spark can be run on Yarn OS as client mode or cluster mode.
+
+spark-submit command in spark client mode
+
+The jar file is copied to Edge node
+The Driver first creates the DAG.
 
 
 
