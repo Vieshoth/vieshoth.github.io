@@ -36,11 +36,30 @@ Worker Services are daemon processes which runs on the Data Nodes. It frequrntly
 ### Driver
 It first creates and DAG and then stages and at last tasks.
 
-When we did a put command what internally happems is from my laptop it contacted the master service wich run in the name node.
-And it will request the master service to allocate the resource for the file which it wants to save.
-Before that the local system(the laptop in this case) will alloca
+### Steps involved in storing a file in cluster.
+Lets see a simple example here for better understanding. Lets say we want to save a file called "sample.txt" with the size of 384MB in the cluster. First the driver will divide the file into blocks based on the file system block size. Here lets assume the file system block size is 128MB. Hence the "sample.txt" file is divided into three blocks.
 
+As a next step the user(laptop) will contacts the master service wich runs in the name node for the resources to save this block.
 The master service will have all the information about the Data nodes becuase the worker serices keeps on updating about data node resources to master service.
-
 The master service in return will send the information of three data nodes and request to store that block in those data nodes.
+Now the user can directly store the B1 block in the data node
+By default the replication is 3.
+
+Again it will contact Worker serivice and request for resources for the next block B2. So again Worker service will allocate three nodes and request the user to store it in those three nodes. 
+
+Like wise it stores the block B3. Meanwhile all these information gets stored in the name node's ram.
+
+
+
+
+
+When we did a put command what internally happems is from my laptop it contacts the master service wich run in the name node.
+And it will request the master service to allocate the resource for the file which it wants to save.
+Before that the local system(the laptop in this case) will allocate
+
+
+
+Lets say we have 
+
+
 
