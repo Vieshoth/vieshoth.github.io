@@ -68,11 +68,24 @@ Spark submit command is run from Edge node. As soon as we run the Spark submit c
 Spark can be run on Yarn OS as client mode or cluster mode.
 
 spark-submit command in spark client mode
-
+spark-submit -class <Packagename> <jar file> <arg0> <arg1> <arg2>
+  
+ <package name> - the class name where the main object is located
+ <jar file> - The jar file created from the application - This is a binary file.
+ <arg0> - the place the where the jar file is running. If it is running in IDE, then it has to be "master". In case of YARN it can be     either YARN-CLIENT or YARN-CLUSTER.
+ <argn> - argument for the application.
+   
+   Example: spark-submit --class com.vieshoth.project.spark.apiexamples.ItemWiseCount target/spark_app.jar yarn-client hdfs://192.168.1.2:9000/user/kafka/data/sales/sample.txt hdfs://192.168.1.2:9000/user/kafka/data/sales/output.txt
+   
+   Basically this command gives the sample.txt file as input to the application and requests the application to save the result in the output.txt file.
+   
 The jar file is copied to Edge node
 The Driver first creates the DAG.
 
-In the spark submit the driver will ask 
+As we said earlier the driver is a part of spark-submit process.
+As soon as the spark-submit command is executed the driver will contact the Name node service requesting the sample.txt. the IP address of the Name Node is specified with the "sample.txt" file argument. And it will contact the Resource Manager for the resource (CPU core and RAM) to run the application 
+
+
 
 
 
