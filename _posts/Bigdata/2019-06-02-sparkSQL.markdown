@@ -6,6 +6,7 @@ categories: Bigdata
 ---
 
 
+
 SPARK SQL is all about processing structured data
 
 structured data: where the complete structure of data is available. Schema is available. column title, column datatype is all available.
@@ -29,14 +30,14 @@ spark sql is capable of handling structured data and semi structured data. It ca
 Components of SPARKSQL.
 
 1. Data source API - Single universal API used for read / write any structured data or semi structured data. 
-Also this API has the ablility to discover schema. 
+Also this API has the ablility to discover schema or accept specified schema.
 The internal datasource libraries will take care of identifying the schema.
 
 2. Dataframe : DF inherits all the features of RDD. 
 - High level representation of data.
 - Collection of records + schema => collection of rows + schema => table.
 
-The main diff bw RDD and DF is RDD does not have schema but DF does.
+On top level the main diff bw RDD and DF is RDD does not have schema but DF does.
 Datasource API will produce DF after reading the datafile.
 
 3. SQL parser and optimizer:
