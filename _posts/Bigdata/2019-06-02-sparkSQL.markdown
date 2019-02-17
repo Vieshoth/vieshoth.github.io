@@ -65,7 +65,12 @@ Reason behind the DF is faster than RDD is
 1. catalyst - optimizes the query
 2. tungsten - optimizes the code.
 
+Whenever there is custom parsing is required it is better to fall back to RDD. Later this RDD can converted to DF.
 
+
+Two ways
+1. Case class
+2. programmatic
 
 
 BI tools are used to communicate with the Hive server
