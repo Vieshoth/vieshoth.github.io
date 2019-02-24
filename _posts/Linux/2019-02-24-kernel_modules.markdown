@@ -10,7 +10,10 @@ Any kernel module can be added and removed to the kernel using the following two
 
 #### insmod 
 This command is used only to insert the module to the kernel. 
-Syntax: insmod <path/module_name_with_extension>
+Syntax: 
+```
+insmod <path/module_name_with_extension>
+```
 
 #### rmmod 
 It only removes module from kernel.
