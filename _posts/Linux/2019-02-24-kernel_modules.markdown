@@ -14,19 +14,25 @@ Syntax:
 ```
 insmod <path/module_name_with_extension>
 ```
+It is mandatory to provide the absolute or relative path with the module name.
 
 #### rmmod 
 It only removes module from kernel.
-Syntax: rmmod <module_name_with_extension>
+```
+rmmod <module_name_with_extension>
+```
 
 #### modprobe 
 Both inserting and removing a module can be done.
 Syntax for adding :
+```
 modprobe <module_name_without_extension>
+```
 Syntax for removing:
+```
 modprobe -r <module_name_without_extension>
-
-To use modprobe the driver module should be in the following path
+```
+To use modprobe the driver module should be in the following path
      /lib/modules/<kernel_version>/
 
 
