@@ -4,6 +4,11 @@ comments: true
 categories: Linux
 title: KERNEL MODULES
 ---
+### Generating Modules
+
+A driver program in kernel can be compiled in two ways.
+- Along with the kernel image
+- Or a seperate binary
 
 ### Loading Modules
 Any kernel module can be added and removed to the kernel using the following two commands:
