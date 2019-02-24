@@ -36,6 +36,6 @@ To use modprobe the driver module should be in the following path
 
 /lib/modules/<kernel_version>/
 
-However by simply placing the module in the "/lib/modules/<kernel_version>/" path, does not work. A command called "depmod" is needed to be entered. This depmode command will creates/updates the necessary configuration files under the "/lib/modules/<kernel_version>/" path in order to make the "modprobe" command to identify and find the placed the module.
+However by simply placing the module in the **/lib/modules/<kernel_version>/** path, does not work. A command called **depmod** is needed to be entered. This depmode command will creates/updates the necessary configuration files under the **/lib/modules/<kernel_version>/** path in order to make the **modprobe** command to identify and find the placed the module.
 
 
