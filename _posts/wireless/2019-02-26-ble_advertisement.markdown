@@ -16,18 +16,13 @@ ADV Types |ADV_IND | ADV_DIRECT_IND | ADV_NONCONN_IND | ADV_SCAN_IND
 -------- | ------------ | ------------- | -------------- | ----------
 Full Form | Adevertisement Indication | Adevertisement Direct Indication | Adevertisement non connectable Indication |  Adevertisement scannable Indication
 Connectable | Yes - Connection request to any Central device | Yes - Connection request to a particular device | Non connectable - Only Beacons |  Non connectable - Only Beacons
-Connectable | Connectable to any device | Connectable to a particular device | Non connectable - Only Beacons |  Non connectable - Only Beacons
+scan responses | Yes | Yes | No |  Yes
 
-Content in the first column | Content in the second column
+
 
 ![GitHub Logo](/images/ble_adv_full_frame.PNG)
 ![GitHub Logo](/images/ble_adv_pdu.PNG)
 ![GitHub Logo](/images/ble_adv_pdu_header.PNG)
 ![GitHub Logo](/images/ble_adv_full_pic.PNG)
----
-ADV_IND: xxxx
-ADV_DIRECT_IND: yyyy
-ADV_NONCONN_IND: zzzz
-ADV_SCAN_IND: aaaa
----
+
 
