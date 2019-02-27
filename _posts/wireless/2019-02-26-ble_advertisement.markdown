@@ -14,7 +14,7 @@ Both the Advertising and Data follows the same frame structure which comprises o
 
 ADV_IND | ADV_DIRECT_IND | ADV_NONCONN_IND | ADV_SCAN_IND
 ------------ | ------------- | -------------- | ----------
-Content from cell 1 | Content from cell 2
+Adevertisement Indication | Adevertisement Direct Indication | Adevertisement non connectable Indication |  Adevertisement scannable Indication
 Content in the first column | Content in the second column
 
 ---
