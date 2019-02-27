@@ -20,10 +20,10 @@ Connectable | Connectable to any device | Connectable to a particular device | N
 
 Content in the first column | Content in the second column
 
-![GitHub Logo](/images/ssl_certificate/ble_adv_full_frame.PNG)
-![GitHub Logo](/images/ssl_certificate/ble_adv_pdu.PNG)
-![GitHub Logo](/images/ssl_certificate/ble_adv_pdu_header.PNG)
-![GitHub Logo](/images/ssl_certificate/ble_adv_full_pic.PNG)
+![GitHub Logo](/images/ble_adv_full_frame.PNG)
+![GitHub Logo](/images/ble_adv_pdu.PNG)
+![GitHub Logo](/images/ble_adv_pdu_header.PNG)
+![GitHub Logo](/images/ble_adv_full_pic.PNG)
 ---
 ADV_IND: xxxx
 ADV_DIRECT_IND: yyyy
