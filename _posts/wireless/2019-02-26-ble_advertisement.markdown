@@ -12,12 +12,14 @@ The length of both the advertising and transmission frame is 37 bytes.
 
 Both the Advertising and Data follows the same frame structure which comprises of four components.
 
-ADV_IND
+---
+ADV_IND : xxxx
 
-ADV_DIRECT_IND
+ADV_DIRECT_IND: yyyy
 
-ADV_NONCONN_IND
+ADV_NONCONN_IND: zzzz
 
-ADV_SCAN_IND
+ADV_SCAN_IND: aaaa
 
+---
 
