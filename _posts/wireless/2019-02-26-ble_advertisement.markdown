@@ -19,9 +19,14 @@ For Advertisment:
 ![GitHub Logo](/images/adv_frame_structure.PNG)
 
 
+BLE has four types of advertisement packets.
+1. ADV_IND
+2. ADV_DIRECT_IND
+3. ADV_NONCONN_IND
+4. ADV_SCAN_IND
 
+The first two are used for connection estabilishment. And the last two are used only for broadcasting purpose.
 
-which comprises of four components.
 
 ADV Types |ADV_IND | ADV_DIRECT_IND | ADV_NONCONN_IND | ADV_SCAN_IND
 -------- | ------------ | ------------- | -------------- | ----------
