@@ -9,7 +9,17 @@ Bluetooth Low Energy operates on 2.4GHz ISM band, which is seperated by 2MHz eac
 3 for Advertising and 37 for data transimission.
 
 Both the Advertising and Data transmission follows the same frame structure as shown below.
+
 ![GitHub Logo](/images/ble_adv_full_frame.PNG)
+
+However the difference comes in how many bytes used in the PDU as shown below
+
+For Advertisment:
+
+![GitHub Logo](/images/ble_adv_full_frame.PNG)
+
+
+
 
 which comprises of four components.
 
