@@ -6,7 +6,7 @@ categories: wireless
 ---
 
 Bluetooth Low Energy operates on 2.4GHz ISM band, which is seperated by 2MHz each. This 2.4 GHz is seperated by 40 channels.
-3 for Advertising and 37 for data transimission.
+Out of which 3 channels (37, 38, 39) are used for Advertising.
 
 Both the Advertising and Data transmission follows the same frame structure as shown below.
 
