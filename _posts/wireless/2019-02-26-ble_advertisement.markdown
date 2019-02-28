@@ -16,7 +16,7 @@ However the difference comes in how many bytes used in the PDU as shown below
 
 For Advertisment:
 
-![GitHub Logo](/images/ble_adv_full_frame.PNG)
+![GitHub Logo](/images/adv_frame_structure.PNG)
 
 
 
