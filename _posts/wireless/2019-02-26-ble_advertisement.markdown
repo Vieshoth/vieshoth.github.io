@@ -8,9 +8,10 @@ categories: wireless
 Bluetooth Low Energy operates on 2.4GHz ISM band, which is seperated by 2MHz each. This 2.4 GHz is seperated by 40 channels.
 3 for Advertising and 37 for data transimission.
 
-The length of both the advertising and data transmission frame is 37 bytes.
+Both the Advertising and Data transmission follows the same frame structure as shown below.
+![GitHub Logo](/images/ble_adv_full_frame.PNG)
 
-Both the Advertising and Data follows the same frame structure which comprises of four components.
+which comprises of four components.
 
 ADV Types |ADV_IND | ADV_DIRECT_IND | ADV_NONCONN_IND | ADV_SCAN_IND
 -------- | ------------ | ------------- | -------------- | ----------
@@ -20,7 +21,6 @@ scan responses | Yes | Yes | No |  Yes
 
 
 
-![GitHub Logo](/images/ble_adv_full_frame.PNG)
 ![GitHub Logo](/images/ble_adv_pdu.PNG)
 ![GitHub Logo](/images/ble_adv_pdu_header.PNG)
 ![GitHub Logo](/images/ble_adv_full_pic.PNG)
