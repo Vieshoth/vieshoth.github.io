@@ -31,6 +31,7 @@ The following link gives you an installation guide for various linux flavours
 [Installing git on linux](https://git-scm.com/download/linux)
 	
 For ubuntu these two commands are sufficient
+
 ```
 sudo apt-get update
 sudo apt-get install git
@@ -38,11 +39,14 @@ sudo apt-get install git
 
 To confirm that git is installed successfully enter the below commands and check the output. If it shows a similar path 
 as output then it installed. Also check the version of the git for your reference.
+
 ```
 $ which git 
 /usr/bin/git
 ```
+
 and 
+
 ```
 $ git version	
 git version 2.7.4
@@ -55,10 +59,12 @@ After installing git we need to configure the git. That means feeding it with re
 We can make this configuration either global or local to the repository.
 
 ### Global Configuration
+
 ```
 git config --global user.name "<youname>"
 git config --global user.email "<mailid>"
 ```	
+
 Fill the username and mailid with your appropriate input.
 
 Now go and check the ".gitconfig" file in your home directory. 
@@ -66,6 +72,7 @@ These name and email details should be updated in that file.
 
 Once it is set this configuration is applicable for all the git repo in your PC untill you change.
 You can also use the below commands to view the configuration:
+
 ```
 git config --list
 git config user.name
@@ -75,10 +82,12 @@ git config user.name
 	
 You can also add configurion which is local to that repo unlike global.
 For example:
+
 ```
 git config --local local.name "<youname>"
 git config --local local.email "<mailid>"
 ```	
+	
 These configuration will not effect the ".gitconfigure" file under home directory. However it will update the config
 file inside .git directory under the directory in which you applied these commands.
 
@@ -94,17 +103,29 @@ Git also has system level configuration. But it is not covered in the tutorial.
 git config user.name
 
 To tell git what text editor you will be using
+
+```
 git config --global core.editor "<editor name>"
 git config --global color.ui true
 
+```
+
 Git help
 
+```
 git help
+```
+
 git help <command>
-	ex: git help fetch
+```
+git help fetch
+```
+
 
 man git-<command>
-	ex: man git-fetch
+```
+man git-fetch
+```
 
 ## Initialization
 
