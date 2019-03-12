@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ALL YOU WANT TO KNOW ABOUT GIT"
+title:  "GIT - BEGINNER"
 date:   2017-12-1 18:00:31 +0530
 categories: Linux
 ---
