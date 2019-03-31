@@ -4,43 +4,74 @@ comments: true
 categories: Linux
 title: KERNEL MODULES
 ---
-### Generating Modules
 
-A driver program in kernel can be compiled in two ways.
-- Along with the kernel image
-- Or a seperate binary
+NIST cs FRAMEWORK
 
-### Loading Modules
-Any kernel module can be added and removed to the kernel using the following two commands:
+Identity
+Protect
+Detect
+Respond
+Recover
 
-#### insmod 
-This command is used only to insert the module to the kernel. 
-Syntax: 
-```
-insmod <path/module_name_with_extension>
-```
-It is mandatory to provide the absolute or relative path with the module name.
+4 level of CS maturity
 
-#### rmmod 
-It only removes module from kernel.
-```
-rmmod <module_name_with_extension>
-```
+Partial
+Risk informed
+Repeatable
 
-#### modprobe 
-Both inserting and removing a module can be done.
-Syntax for adding :
-```
-modprobe <module_name_without_extension>
-```
-Syntax for removing:
-```
-modprobe -r <module_name_without_extension>
-```
-To use modprobe the driver module should be in the following path
-```
-/lib/modules/<kernel_version>/
-```
-However by simply placing the module in the **/lib/modules/<kernel_version>/** path, does not work. A command called **depmod** is needed to be entered. This depmode command will creates/updates the necessary configuration files under the **/lib/modules/<kernel_version>/** path in order to make the **modprobe** command to identify and find the placed the module.
+risk assessment
+threat
+vulnarability
+knowing the diff bw threat and vulnarability is a key - more info NIST
 
-#### lsmod
+Liklyhood - what is the likelyhood that a malware can damage you system
+
+Veriozon DBIR
+
+ISACs
+
+Security control FW
+
+vulnerability assessment
+Hosts- Nessus
+Databases - Scuba
+APplication - OWASP ZAP
+
+sECURITY aSSESSMENT
+1. Risk Assesment
+2. Security control Assessment
+3. Compliance assessment
+4. Vulnerablility assessment
+5. Penetration test - White box, Grey box and Black box
+
+Tools
+
+Kali Linux
+Nmap
+Nessus -tenable - vunerablilty scanner
+wireshark
+Lynis - security configurable assesment
+cis-cat
+aircrack-ng
+Hashcat - password cracker
+Open web app sec project - oswap zap
+
+For penitration test
+1. Find the methodology
+2. And the tools
+
+log management system
+opensource
+syslog
+syslog-ng
+greylog
+elk Stack
+
+zeltser.com/cheat-sheets/
+
+
+
+
+
+
+
