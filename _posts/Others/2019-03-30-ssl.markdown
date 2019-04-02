@@ -13,7 +13,7 @@ Server
 Server's supported encryption
 Server's certificate
 
-Whats is certificate
+Whats in certificate
 Domain name of the server
 Public key
 owner odf the certificate
