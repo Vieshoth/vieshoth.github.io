@@ -74,5 +74,58 @@ https://www.osboxes.org
 https://www.vulnhub.com
 
 
+IT security key concepts
+CIA - Confidentiality, Integrety, Availability
+Best practices
+Defence in depth
+Policies, standards, procidures and guidelines
+
+IT SEC FRAMEWORKS
+ISO/IEC/ 27001/27002
+NIST 
+Critical security controls
+Payment Card Industry Data Security Standard
+
+Fundemental technologies
+IP networking
+Firewall
+Cryptography
+
+IP N/w Attacks
+--------------
+Eavesdropping
+IP address spoofing
+Denial of service attacks
+Sniffer attacks
+Made in middle attacks
+
+Firewalls
+---------
+Types of Firewalls
+Firewalls placement
+Firewall rulesets and packet filtering
+Well-known ports
+N/w layer and Application layer
+
+Common firewall attacks
+Brut force
+Default password
+
+Cryptography
+------------
+Common Algorithms: AES, Diffy halman, RSA, ECC
+secret key and public key
+Digital certificates, 
+CA
+
+
+Security+ Books
+CompTIA secuirty: Get Certified Fet Ahead
+Sybex
+
+
+
+
+
 
 
