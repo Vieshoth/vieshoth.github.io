@@ -1,0 +1,31 @@
+public key is not identical to private key
+but mathematically linked to private key
+
+public key - encrypt 
+private key - decrypt
+
+
+Client
+Client's supported encryption
+A random number
+
+Server
+Server's supported encryption
+Server's certificate
+
+Whats is certificate
+Domain name of the server
+Public key
+owner odf the certificate
+Issuer of the certificate (CA)
+expiration date
+Serial number
+
+
+Next the server encrypts the random number the client sends and send it back to client.
+Cleint decodes it with public key and compared it with the original number
+with this identity is confirmed
+
+Next certificate check
+client submits OCSP request
+
