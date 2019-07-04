@@ -29,3 +29,8 @@ ifconfig -a
 ```
 nmcli con up id vieshoth
 ```
+
+#### To check the connected ssid
+````
+iw dev wlan0 link
+````
