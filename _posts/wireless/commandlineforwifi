@@ -1,0 +1,4 @@
+netsh wlan show drivers
+netsh wlan set hostednetwork mode=allow ssid=vietplink key=12345678
+netsh wlan start hostednetwork
+netsh wlan show hostednetwork
