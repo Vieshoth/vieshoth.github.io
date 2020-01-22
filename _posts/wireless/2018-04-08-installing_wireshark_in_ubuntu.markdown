@@ -36,6 +36,9 @@ wlp1s0		Intel AC	iwlwifi - [phy0]
 root@vieshoth-PC:~# 
 
 ```
+after this command the interface "wlp1s0" should be changed to "wlp1s0mon". For example:
+```
+```
 
 #### Installing wireshark
 ```
@@ -48,4 +51,10 @@ root@root$ sudo apt-get install wireshark
 #### Instantiate Wireshark
 ```
 root@root$ wireshark
+```
+
+#### disable monitor mode from interface
+```
+airmon-ng stop wlan0mon
+service network-manager start
 ```
